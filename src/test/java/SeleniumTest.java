@@ -24,7 +24,11 @@ public class SeleniumTest {
     public void updaterecordTest() {
         Selenium.updateRecord("Antanas", "Baranauskas", "Silelis");
     }
-    
+    @Test
+    public void updaterecordBadTest() {
+        Selenium.updateRecord("Antanas", "Baranauskas", "Silelis");
+    }
+
 
 
     @AfterTest
