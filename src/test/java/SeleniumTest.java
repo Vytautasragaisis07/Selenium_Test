@@ -30,7 +30,6 @@ public class SeleniumTest {
     }
 
 
-
     @AfterTest
     public void close() {
         //Selenium.close();
