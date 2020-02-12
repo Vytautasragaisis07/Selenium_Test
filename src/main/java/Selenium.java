@@ -11,7 +11,7 @@ public class Selenium {
 
     private static final int SECONDS = 2;
 
-    public static void setup(){
+    public static void setup() {
         System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver.exe");
 
         browser = new ChromeDriver();
@@ -20,15 +20,57 @@ public class Selenium {
 
     //public static void close() { browser.close(); }
 
-    public static void searchByKeyword(String keyword) {
-        WebElement searchField = browser.findElement(By.id("sb_form_q"));
-        searchField.sendKeys(keyword);
-        searchField.sendKeys(Keys.ENTER);
+    public static void createRecord(String keyword) {
+        WebElement nameField = browser.findElement(By.name("pavadinimas"));
+        WebElement genreField = browser.findElement(By.name("zanras"));
+        WebElement directorField = browser.findElement(By.name("rezisierius"));
+        nameField.sendKeys(keyword);
+        genreField.sendKeys(keyword);
+        directorField.sendKeys(keyword);
+        directorField.sendKeys(Keys.ENTER);
+    }
+
+    public static void badRecord(String keyword) {
+        WebElement nameField = browser.findElement(By.name("pavadinimas"));
+        WebElement genreField = browser.findElement(By.name("zanras"));
+        WebElement directorField = browser.findElement(By.name("rezisierius"));
+        nameField.sendKeys(keyword);
+        genreField.sendKeys(keyword);
+        directorField.sendKeys(keyword);
+        directorField.sendKeys(Keys.ENTER);
+        WebElement messageField = browser.findElement(By.name("msg-bad"));
+    }
+    public static void deleteRecord(String keyword) {
+        WebElement idField = browser.findElement(By.name("id"));
+        WebElement deleteBtn = browser.findElement(By.name("delete"));
+        idField.sendKeys(keyword);
+        deleteBtn.sendKeys(Keys.ENTER);
+        idField.sendKeys(Keys.ENTER);
+        WebElement messageField = browser.findElement(By.name("msg-good"));
+    }
+    public static void updateRecord(String keyword1, String keyword2, String keyword3) {
+        WebElement nameField = browser.findElement(By.name("pavadinimas"));
+        WebElement genreField = browser.findElement(By.name("zanras"));
+        WebElement directorField = browser.findElement(By.name("rezisierius"));
+        WebElement updateBtn = browser.findElement(By.name("update"));
+        nameField.sendKeys(keyword1);
+        genreField.sendKeys(keyword2);
+        directorField.sendKeys(keyword3);
+        updateBtn.sendKeys(Keys.ENTER);
+        WebElement messageField = browser.findElement(By.name("msg-good"));
+    }
+    public static void Record(String keyword) {
+        WebElement idField = browser.findElement(By.name("id"));
+        WebElement deleteBtn = browser.findElement(By.name("delete"));
+        idField.sendKeys(keyword);
+        deleteBtn.sendKeys(Keys.ENTER);
+        idField.sendKeys(Keys.ENTER);
+        WebElement messageField = browser.findElement(By.name("msg-good"));
     }
 
     public static void main(String[] args) {
 
-        System.out.println("Selenium Maven TestNG");
+        System.out.println("Selenium + Maven + TestNG");
     }
 
     private static void waitForElementById(WebDriver browser, String id) {

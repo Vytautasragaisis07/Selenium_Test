@@ -9,9 +9,23 @@ public class SeleniumTest {
     }
 
     @Test
-    public void searchById() {
-        Selenium.searchById("20");
+    public void createRecordTest() {
+        Selenium.createRecord("Super Filmas");
     }
+    @Test
+    public void badRecordTest() {
+        Selenium.badRecord("<div>");
+    }
+    @Test
+    public void deleterecordTest() {
+        Selenium.deleteRecord("90");
+    }
+    @Test
+    public void updaterecordTest() {
+        Selenium.updateRecord("Antanas", "Baranauskas", "Silelis");
+    }
+    
+
 
     @AfterTest
     public void close() {
