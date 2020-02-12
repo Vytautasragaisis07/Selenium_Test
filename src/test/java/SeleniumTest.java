@@ -10,23 +10,23 @@ public class SeleniumTest {
 
     @Test
     public void createRecordTest() {
-        Selenium.createRecord("Super Filmas");
+        Selenium.createRecord("Antanas", "Baranauskas", "Silelis");
     }
     @Test
     public void badRecordTest() {
-        Selenium.badRecord("<div>");
+        Selenium.badRecord("<h1>", "<h2>", "<h3>");
     }
     @Test
-    public void deleterecordTest() {
-        Selenium.deleteRecord("90");
+    public void deleteRecordTest() {
+        Selenium.deleteRecord("145");
     }
     @Test
-    public void updaterecordTest() {
-        Selenium.updateRecord("Antanas", "Baranauskas", "Silelis");
+    public void updateRecordTest() {
+        Selenium.updateRecord("146", "Antanas", "Baranauskas", "Silelis");
     }
     @Test
-    public void updaterecordBadTest() {
-        Selenium.updateRecord("Antanas", "Baranauskas", "Silelis");
+    public void badUpdateRecordTest() {
+        Selenium.badUpdate("147","<div>","<h1>","<p>");
     }
 
 
