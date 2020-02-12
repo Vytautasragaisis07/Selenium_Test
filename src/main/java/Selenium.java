@@ -80,7 +80,7 @@ public class Selenium {
     public static void main(String args[]) {
         System.out.println("TestNG pirmas bandymas");
         setup();
-        addRecord("Antanas","Baranauskas","Silelis");
+        createRecord("Antanas","Baranauskas","Silelis");
         badRecord("<h1>","<h2>","<h3>");
         deleteRecord("145");
         updateRecord("146","Antanas","Baranauskas","Silelis");
